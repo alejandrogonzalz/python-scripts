@@ -37,14 +37,14 @@ def calculate_statistics(numbers):
     variance = sum((x - mean) ** 2 for x in sorted_nums) / count
 
     # Desviación Estándar
-    std_dev = variance ** 0.5
+    std_dev = variance**0.5
 
     return {
         "Mean": mean,
         "Median": median,
         "Mode": mode,
         "Variance": variance,
-        "Std Dev": std_dev
+        "Std Dev": std_dev,
     }
 
 
@@ -60,7 +60,7 @@ def main():
     numbers = []
 
     try:
-        with open(filename, 'r', encoding='utf-8') as file:
+        with open(filename, "r", encoding="utf-8") as file:
             for line in file:
                 try:
                     numbers.append(float(line.strip()))
@@ -85,7 +85,7 @@ def main():
         )
         print(output)
 
-        with open("StatisticsResults.txt", "w", encoding='utf-8') as f_out:
+        with open("StatisticsResults.txt", "w", encoding="utf-8") as f_out:
             f_out.write(output)
 
 

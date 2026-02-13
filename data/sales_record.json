@@ -1,0 +1,22 @@
+[
+  {
+    "product": "Laptop",
+    "quantity": 2
+  },
+  {
+    "product": "Mouse",
+    "quantity": 5
+  },
+  {
+    "product": "Monitor",
+    "quantity": 1
+  },
+  {
+    "product": "Teclado",
+    "quantity": 3
+  },
+  {
+    "product": "Producto Inexistente",
+    "quantity": 10
+  }
+]

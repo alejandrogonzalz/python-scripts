@@ -25,7 +25,7 @@ def read_words_from_file(filename):
     """Lee el archivo y maneja errores de datos o lectura."""
     all_words = []
     try:
-        with open(filename, 'r', encoding='utf-8') as file:
+        with open(filename, "r", encoding="utf-8") as file:
             for line in file:
                 # Separar por espacios
                 words = line.split()
@@ -66,7 +66,7 @@ def main():
     final_results = "\n".join(output)
     print(final_results)
 
-    with open("WordCountResults.txt", "w", encoding='utf-8') as f_out:
+    with open("WordCountResults.txt", "w", encoding="utf-8") as f_out:
         f_out.write(final_results)
 
 

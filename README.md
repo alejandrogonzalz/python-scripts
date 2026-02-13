@@ -1,101 +1,81 @@
-# Actividad A4.2: Programación en Python y Estándares de Codificación
 
-Este repositorio contiene la solución a tres ejercicios de programación en Python, desarrollados bajo el estándar **PEP-8** y verificados con **Pylint** para asegurar la calidad del código.
+# Actividad A5.2: Programación en Python - Sistema de Cálculo de Ventas
+
+Este repositorio contiene la solución para el sistema de gestión de ventas desarrollado bajo el estándar **PEP-8**, validado con **Pylint** y ejecutado mediante el gestor de entornos **uv**.
 
 ## Estructura del Proyecto
 
-* `scripts/`: Contiene los archivos fuente de Python.
-    * `compute_statistics.py`: Calcula estadísticas descriptivas.
-    * `convert_numbers.py`: Convierte números a binario y hexadecimal.
-    * `word_count.py`: Cuenta la frecuencia de palabras.
-* `data/`: Contiene los archivos de entrada y las evidencias de ejecución.
-    * `file_with_data.txt`: Archivo con datos de prueba.
-    * `*_pylint.png`: Capturas de pantalla con la calificación de Pylint.
-* `*.txt`: Archivos de resultados generados por los scripts (se crean tras la ejecución).
+* `scripts/`: Contiene el código fuente.
+* `compute_sales.py`: Script principal que procesa catálogos y registros de ventas.
+
+
+* `data/`: Archivos de entrada en formato JSON.
+* `price_catalogue.json`: Catálogo maestro de productos y precios.
+* `sales_record.json`: Registro de transacciones de ventas.
+
+
+* `SalesResults.txt`: Reporte generado automáticamente con el total y el tiempo de ejecución.
 
 ---
 
-## 1. Compute Statistics (`compute_statistics.py`)
+## 1. Compute Sales (`compute_sales.py`)
 
-Este programa lee un archivo con números y calcula estadísticas descriptivas básicas (Media, Mediana, Moda, Varianza, Desviación Estándar) sin utilizar librerías matemáticas externas.
+Este programa realiza el cruce de información entre un catálogo de precios y un registro de ventas para determinar el costo total de la operación de una empresa.
 
-**Ejecución:**
+### Requisitos Técnicos Cumplidos:
+
+* [x] **Invocación:** El programa recibe dos archivos JSON por línea de comandos.
+* [x] **Manejo de Errores:** Gestiona datos inválidos, archivos inexistentes y productos no encontrados en el catálogo sin detener la ejecución.
+* [x] **Salida Dual:** Resultados legibles en consola y exportados a `SalesResults.txt`.
+* [x] **Rendimiento:** Optimizado para manejar desde cientos hasta miles de registros.
+* [x] **Métrica de Tiempo:** Reporta el tiempo transcurrido del proceso al finalizar.
+
+### Ejecución con `uv`:
+
+Para ejecutar el programa utilizando el gestor `uv`, utiliza el siguiente comando:
+
 ```bash
-python scripts/compute_statistics.py data/file_with_data.txt
+uv run ./scripts/compute_sales.py ./data/price_catalogue.json ./data/sales_record.json
 
 ```
 
-**Resultados:**
-Los resultados se muestran en consola y se guardan en `StatisticsResults.txt`.
-
-* Maneja datos inválidos ignorándolos y notificando al usuario.
-* Muestra el tiempo de ejecución al final.
-
-**Calidad de Código (Pylint):**
-El código cumple con todos los estándares PEP-8, obteniendo una calificación perfecta.
-
-![compute_statistics_pylint.png](data/compute_statistics_pylint.png)
-
 ---
 
-## 2. Convert Numbers (`convert_numbers.py`)
+## 2. Calidad de Código y Estándares
 
-Programa que lee números de un archivo y los convierte a sus representaciones en **Binario** y **Hexadecimal** utilizando algoritmos básicos de división sucesiva (sin funciones integradas como `bin()` o `hex()`).
+El código ha sido verificado para cumplir estrictamente con **PEP-8**, asegurando legibilidad y mantenimiento a largo plazo.
 
-**Ejecución:**
+**Validación con Pylint:**
 
 ```bash
-python scripts/convert_numbers.py data/file_with_data.txt
+uv run pylint ./scripts/compute_sales.py
 
 ```
 
-**Resultados:**
-Los resultados se muestran en consola y se guardan en `ConvertionResults.txt`.
-
-* Soporta números negativos y decimales (truncándolos a enteros).
-* Reporta el tiempo de procesamiento.
-
-**Calidad de Código (Pylint):**
-Verificación de estándares de codificación y complejidad ciclomática.
-
-![convert_numbrers_pylint.png](data/convert_numbrers_pylint.png)
-
----
-
-## 3. Word Count (`word_count.py`)
-
-Lee un archivo de texto, identifica las palabras distintas y calcula la frecuencia de aparición de cada una.
-
-**Ejecución:**
-
-```bash
-python scripts/word_count.py data/file_with_data.txt
-
+Resultados:
+```log
+uv run ./scripts/compute_sales.py ./data/price_catalogue.json ./data/sales_record.json
+==============================
+REPORTE DE VENTAS
+==============================
+Total de ventas: $2,963.97
+Tiempo de ejecución: 0.0000 segundos
+==============================
 ```
 
-**Resultados:**
-Los resultados se muestran en consola y se guardan en `WordCountResults.txt`.
+![img.png](data/compute_sales_pylint.png)
 
-* Maneja errores de lectura de archivos.
-* Limpia signos de puntuación básicos para un conteo más preciso.
+Errores detectados:
+Producto no encontrado en catálogo: Producto Inexistente
 
-**Calidad de Código (Pylint):**
-El script sigue las convenciones de nomenclatura y estructura de Python.
 
-![word_count_pylint.png](data/word_count_pylint.png)
+**Resultado:** `Your code has been rated at 10.00/10`
 
 ---
-
-## Requisitos Técnicos Cumplidos
-
-* [x] **Línea de comandos:** Todos los programas reciben el archivo como parámetro.
-* [x] **Manejo de Errores:** Se capturan datos inválidos y archivos inexistentes sin romper la ejecución.
-* [x] **Algoritmos Básicos:** No se utilizan librerías externas para los cálculos (solo `sys` y `time`).
-* [x] **Salida Dual:** Los resultados se imprimen en pantalla y se guardan en archivos `.txt`.
-* [x] **Rendimiento:** Se mide y reporta el tiempo de ejecución.
-* [x] **PEP-8:** Código validado con Pylint (Score: 10/10).
 
 ## Autor
 
-- **Matrícula:** A00517113
-- **Nombre:** Alejandro Gonzalez Almazan
+* **Matrícula:** A00517113
+* **Nombre:** Alejandro Gonzalez Almazan
+
+---

@@ -10,5 +10,6 @@ dependencies = [
     "numpy>=2.4.1",
     "pandas>=3.0.0",
     "pathlib>=1.0.1",
+    "pylint>=4.0.4",
     "seaborn>=0.13.2",
 ]

@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Laptop",
+    "price": 1200.50
+  },
+  {
+    "title": "Mouse",
+    "price": 25.00
+  },
+  {
+    "title": "Teclado",
+    "price": 45.99
+  },
+  {
+    "title": "Monitor",
+    "price": 300.00
+  },
+  {
+    "title": "Cable HDMI",
+    "price": 12.50
+  }
+]

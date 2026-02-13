@@ -39,7 +39,7 @@ def process_file(filename):
     """Lee el archivo y retorna una lista de tuplas con los resultados."""
     data = []
     try:
-        with open(filename, 'r', encoding='utf-8') as file:
+        with open(filename, "r", encoding="utf-8") as file:
             for line in file:
                 raw = line.strip()
                 if raw:
@@ -79,7 +79,7 @@ def main():
     final_text = "\n".join(output)
     print(final_text)
 
-    with open("ConvertionResults.txt", "w", encoding='utf-8') as f_out:
+    with open("ConvertionResults.txt", "w", encoding="utf-8") as f_out:
         f_out.write(final_text)
 
 
