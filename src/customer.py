@@ -33,7 +33,9 @@ class Customer:
     @classmethod
     def _save_data(cls, data):
         """Saves the customers dictionary to the JSON file."""
-        os.makedirs(os.path.dirname(FILE_PATH), exist_ok=True)
+        directory = os.path.dirname(FILE_PATH)
+        if directory:
+            os.makedirs(directory, exist_ok=True)
         with open(FILE_PATH, "w", encoding="utf-8") as file:
             json.dump(data, file, indent=4)
 
