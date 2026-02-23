@@ -1,0 +1,20 @@
+{
+    "H001": {
+        "hotel_id": "H001",
+        "name": "Hotel del Centro",
+        "location": "Ciudad de Mexico",
+        "rooms": 50
+    },
+    "H002": {
+        "hotel_id": "H002",
+        "name": "Resort Playa",
+        "location": "Cancun",
+        "rooms": 15
+    },
+    "H100": {
+        "hotel_id": "H100",
+        "name": "Grand Hotel Tec",
+        "location": "Monterrey",
+        "rooms": 10
+    }
+}

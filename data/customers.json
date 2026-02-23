@@ -1,0 +1,17 @@
+{
+    "C001": {
+        "customer_id": "C001",
+        "name": "Juan Perez",
+        "email": "juan.perez@example.com"
+    },
+    "C002": {
+        "customer_id": "C002",
+        "name": "Ana Gomez",
+        "email": "ana.gomez@example.com"
+    },
+    "C100": {
+        "customer_id": "C100",
+        "name": "Alex",
+        "email": "alex@estudiante.tec.mx"
+    }
+}
